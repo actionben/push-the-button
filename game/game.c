@@ -83,3 +83,12 @@ void push_the_button_reset(struct push_the_button_game *game) {
     game->mappings[randomSwap] = currentMapping;
   }
 }
+
+int push_the_button_win(struct push_the_button_game *game) {
+  for (int i = 0; i < PUSH_THE_BUTTON_SIZE; i++) {
+    if (game->leds[i] == 0) {
+      return 0;
+    }
+  };
+  return 1;
+}
